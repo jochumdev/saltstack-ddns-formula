@@ -1,0 +1,7 @@
+{% set datamap = salt['grains.filter_by']({
+  'Debian': {
+    'pkgs': [
+      'python-dnspython'
+    ],
+  },
+}, merge=salt['pillar.get']('ddns:lookup')) %}
